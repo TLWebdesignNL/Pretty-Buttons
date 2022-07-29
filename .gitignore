@@ -75,3 +75,6 @@ fabric.properties
 
 # macos finder file
 .DS_Store
+.idea/modules.xml
+.idea/pretty-buttons.iml
+.idea/vcs.xml

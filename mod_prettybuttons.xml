@@ -25,24 +25,24 @@
 						name="block"
 						type="radio"
 						default="0"
-						label="Block column layout"
-						description="This displays the buttons in a BS5 block column layout"
+						label="MOD_PRETTYBUTTONS_FIELD_BLOCK_LABEL"
+						description="MOD_PRETTYBUTTONS_FIELD_BLOCK_DESC"
 						class="btn-group btn-group-yesno">
 					<option value="1">JYES</option>
 					<option value="0">JNO</option>
 				</field>
 				<field
-						name="customoutterclass"
+						name="customouterclass"
 						type="text"
 						default="py-3"
-						label="Custom Outter Div Class"
-						hint="Here you can enter your own class for the div that wraps all content of this module."
+						label="MOD_PRETTYBUTTONS_FIELD_CUSTOMOUTERCLASS_LABEL"
+						description="MOD_PRETTYBUTTONS_FIELD_CUSTOMOUTERCLASS_DESC"
 				/>
 				<field
 						name="before"
 						type="editor"
-						label="Before"
-						description="Content before the buttons"
+						label="MOD_PRETTYBUTTONS_FIELD_BEFORE_LABEL"
+						description="MOD_PRETTYBUTTONS_FIELD_BEFORE_DESC"
 						width="100%"
 						height="250px"
 						filter="safehtml"
@@ -50,8 +50,8 @@
 				<field
 						name="buttons"
 						type="subform"
-						label="Buttons"
-						description="Buttons subform"
+						label="MOD_PRETTYBUTTONS_FIELD_BUTTONS_LABEL"
+						description="MOD_PRETTYBUTTONS_FIELD_BUTTONS_DESC"
 						multiple="true"
 						min="1"
 						max="10"
@@ -64,24 +64,26 @@
 								hint="fas fa-home"
 						/>
 						<field
-								name="text"
+								name="buttontext"
 								type="text"
-								label="Text"
-								hint="Text that is displayed"
+								label="MOD_PRETTYBUTTONS_FIELD_BUTTONTEXT_LABEL"
+								hint="MOD_PRETTYBUTTONS_FIELD_BUTTONTEXT_HINT"
+								description="MOD_PRETTYBUTTONS_FIELD_BUTTONTEXT_DESC"
 						/>
 						<field
 								name="url"
 								type="text"
-								label="URL"
-								hint="the link of the text that is displayed"
+								label="MOD_PRETTYBUTTONS_FIELD_URL_LABEL"
+								hint="MOD_PRETTYBUTTONS_FIELD_URL_HINT"
+								description="MOD_PRETTYBUTTONS_FIELD_URL_DESC"
 						/>
 						<field
 								name="buttonclass"
 								type="list"
 								default=""
 								required="true"
-								label="Button Classes"
-								description="Default button classes"
+								label="MOD_PRETTYBUTTONS_FIELD_BUTTONCLASS_LABEL"
+								description="MOD_PRETTYBUTTONS_FIELD_BUTTONCLASS_DESC"
 								multiple="true"
 						>
 							<option value="btn">btn</option>
@@ -102,8 +104,9 @@
 						<field
 								name="custombuttonclass"
 								type="text"
-								label="Custom Button Class"
+								label="MOD_PRETTYBUTTONS_FIELD_CUSTOMBUTTONCLASS_LABEL"
 								hint="btn btn-primary"
+								description="MOD_PRETTYBUTTONS_FIELD_CUSTOMBUTTONCLASS_DESC"
 								showon="buttonclass:custom"
 						/>
 					</form>
@@ -111,8 +114,8 @@
 				<field
 						name="after"
 						type="editor"
-						label="After"
-						description="Content after the buttons"
+						label="MOD_PRETTYBUTTONS_FIELD_AFTER_LABEL"
+						description="MOD_PRETTYBUTTONS_FIELD_AFTER_DESC"
 						width="100%"
 						height="250px"
 						filter="safehtml"

@@ -23,7 +23,7 @@ if ($block == 1)
         </div>
     <?php endif; // if before?>
     <?php if (is_object($buttons)) : ?>
-        <div class="<?php echo $wrapperClass; ?> <?php echo $customoutterclass; ?>">
+        <div class="<?php echo $wrapperClass; ?> <?php echo $customouterclass; ?>">
             <?php foreach($buttons as $button) :
                 if ($button->url && ($button->iconclass || $button->text)) :
                     ?>
@@ -34,7 +34,7 @@ if ($block == 1)
                        target="_blank"
                     >
                         <?php echo ($button->iconclass) ? '<i class="'.$button->iconclass.' pe-2"></i> ' : '' ; ?>
-                        <?php echo $button->text; ?>
+                        <?php echo $button->buttontext; ?>
                     </a>
                 <?php
                 endif; // if $button->text

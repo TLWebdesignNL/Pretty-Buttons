@@ -22,6 +22,22 @@
 		<fields name="params">
 			<fieldset name="basic">
 				<field
+						name="block"
+						type="radio"
+						default="0"
+						label="Block column layout"
+						description="This displays the buttons in a BS5 block column layout"
+						class="btn-group btn-group-yesno">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field
+						name="customoutterclass"
+						type="text"
+						label="Custom Outter Div Class"
+						hint="Here you can enter your own class for the div that wraps all content of this module."
+				/>
+				<field
 						name="before"
 						type="editor"
 						label="Before"

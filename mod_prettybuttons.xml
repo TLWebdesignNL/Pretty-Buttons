@@ -21,59 +21,84 @@
 	<config>
 		<fields name="params">
 			<fieldset name="basic">
-				<field 
-					name="before" 
-					type="editor" 
-					label="Before"
-					description="Content before the buttons" 
-					width="100%"
-					height="250px"
-					filter="safehtml" 
+				<field
+						name="before"
+						type="editor"
+						label="Before"
+						description="Content before the buttons"
+						width="100%"
+						height="250px"
+						filter="safehtml"
 				/>
 				<field
-					name="buttons"
-					type="subform"
-					label="Buttons"
-					description="Buttons subform"
-					multiple="true"
-					min="1"
-					max="10"
-					>
+						name="buttons"
+						type="subform"
+						label="Buttons"
+						description="Buttons subform"
+						multiple="true"
+						min="1"
+						max="10"
+				>
 					<form>
 						<field
-							name="iconclass"
-							type="text"
-							label="Icon Class"
-							hint="fas fa-home"
-							/>
+								name="iconclass"
+								type="text"
+								label="Icon Class"
+								hint="fas fa-home"
+						/>
 						<field
-							name="text"
-							type="text"
-							label="Text"
-							hint="Text that is displayed"
-							/>
+								name="text"
+								type="text"
+								label="Text"
+								hint="Text that is displayed"
+						/>
 						<field
-							name="url"
-							type="text"
-							label="URL"
-							hint="the link of the text that is displayed"
-							/>
+								name="url"
+								type="text"
+								label="URL"
+								hint="the link of the text that is displayed"
+						/>
 						<field
-							name="buttonclass"
-							type="text"
-							label="Button Class"
-							hint="btn btn-primary"
-							/>
+								name="buttonclass"
+								type="list"
+								default=""
+								required="true"
+								label="Button Classes"
+								description="Default button classes"
+								multiple="true"
+						>
+							<option value="btn">btn</option>
+							<option value="btn-primary">btn-primary</option>
+							<option value="btn-secondary">btn-secondary</option>
+							<option value="btn-success">btn-success</option>
+							<option value="btn-danger">btn-danger</option>
+							<option value="btn-warning">btn-warning</option>
+							<option value="btn-info">btn-info</option>
+							<option value="btn-light">btn-light</option>
+							<option value="btn-dark">btn-dark</option>
+							<option value="btn-link">btn-link</option>
+							<option value="btn-lg">btn-lg</option>
+							<option value="btn-sm">btn-small</option>
+							<option value="w-100">BS5 full width button</option>
+							<option value="custom">Custom Class</option>
+						</field>
+						<field
+								name="custombuttonclass"
+								type="text"
+								label="Custom Button Class"
+								hint="btn btn-primary"
+								showon="buttonclass:custom"
+						/>
 					</form>
 				</field>
-				<field 
-					name="after" 
-					type="editor" 
-					label="After"
-					description="Content after the buttons" 
-					width="100%"
-					height="250px"
-					filter="safehtml" 
+				<field
+						name="after"
+						type="editor"
+						label="After"
+						description="Content after the buttons"
+						width="100%"
+						height="250px"
+						filter="safehtml"
 				/>
 			</fieldset>
 		</fields>

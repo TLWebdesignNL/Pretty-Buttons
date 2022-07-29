@@ -20,7 +20,7 @@
 		<?php foreach($buttons as $button) :
 			if ($button->url && ($button->iconclass || $button->text)) :
 		?>
-			<a class="me-3 small <?php echo $button->buttonclass; ?>" href="<?php echo $button->url; ?>" target="_blank">
+			<a class=" <?php echo ($button->buttonclass && is_array($button->buttonclass)) ? implode(" ", $button->buttonclass): $button->buttonclass; ?> <?php echo ($button->custombuttonclass) ? $button->custombuttonclass : ''; ?>" href="<?php echo $button->url; ?>" target="_blank">
 				<?php echo ($button->iconclass) ? '<i class="'.$button->iconclass.' pe-2"></i> ' : '' ; ?>
 				<?php echo $button->text; ?>
 			</a>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" client="site" method="upgrade">
+	<name>MOD_PRETTYBUTTONS</name>
+	<creationDate>07-26-2022</creationDate>
+	<author>Tom van der Laan</author>
+	<authorEmail>info@tlwebdesign.nl</authorEmail>
+	<authorUrl>https://tlwebdesign.nl</authorUrl>
+	<copyright>TLWebdesign.nl</copyright>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<version>1.0.1</version>
+	<description>MOD_PRETTYBUTTONS_XML_DESCRIPTION</description>
+	<scriptfile>script.php</scriptfile>
+	<namespace path="src">TlwebNamespace\Module\Prettybuttons</namespace>
+	<files>
+		<filename module="mod_prettybuttons">mod_prettybuttons.php</filename>
+		<folder>tmpl</folder>
+		<folder>src</folder>
+		<folder>language</folder>
+		<filename>mod_prettybuttons.xml</filename>
+	</files>
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field 
+					name="before" 
+					type="editor" 
+					label="Before"
+					description="Content before the buttons" 
+					width="100%"
+					height="250px"
+					filter="safehtml" 
+				/>
+				<field
+					name="buttons"
+					type="subform"
+					label="Buttons"
+					description="Buttons subform"
+					multiple="true"
+					min="1"
+					max="10"
+					>
+					<form>
+						<field
+							name="iconclass"
+							type="text"
+							label="Icon Class"
+							hint="fas fa-home"
+							/>
+						<field
+							name="text"
+							type="text"
+							label="Text"
+							hint="Text that is displayed"
+							/>
+						<field
+							name="url"
+							type="text"
+							label="URL"
+							hint="the link of the text that is displayed"
+							/>
+						<field
+							name="buttonclass"
+							type="text"
+							label="Button Class"
+							hint="btn btn-primary"
+							/>
+					</form>
+				</field>
+				<field 
+					name="after" 
+					type="editor" 
+					label="After"
+					description="Content after the buttons" 
+					width="100%"
+					height="250px"
+					filter="safehtml" 
+				/>
+			</fieldset>
+		</fields>
+	</config>
+</extension>

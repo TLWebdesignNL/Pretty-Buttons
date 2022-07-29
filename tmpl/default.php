@@ -1,6 +1,6 @@
 <?php
 /**
- * @package     Joomla.Administrator
+ * @package     Joomla.Site
  * @subpackage  mod_prettybuttons
  *
  * @copyright   Copyright (C) 2005 - 2020 Open Source Matters, Inc. All rights reserved.
@@ -9,20 +9,21 @@
 
 \defined('_JEXEC') or die;
 
-$wrapperClass="d-flex flex-column";
-if ($block == 1) {
-    $wrapperClass = "d-grid gap-2"
+$wrapperClass="";
+if ($block == 1)
+{
+    $wrapperClass = "d-grid gap-2";
 }
 ?>
 
-<div class="<?php echo $wrapperClass; ?> <?php echo $customoutterclass; ?>">
+<div class="d-flex flex-column">
     <?php if ($before) : ?>
         <div class="">
             <?php echo $before; ?>
         </div>
     <?php endif; // if before?>
     <?php if (is_object($buttons)) : ?>
-        <div class="py-3">
+        <div class="<?php echo $wrapperClass; ?> <?php echo $customoutterclass; ?>">
             <?php foreach($buttons as $button) :
                 if ($button->url && ($button->iconclass || $button->text)) :
                     ?>

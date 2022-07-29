@@ -34,6 +34,7 @@
 				<field
 						name="customoutterclass"
 						type="text"
+						default="py-3"
 						label="Custom Outter Div Class"
 						hint="Here you can enter your own class for the div that wraps all content of this module."
 				/>

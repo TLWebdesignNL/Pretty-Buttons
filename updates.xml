@@ -40,14 +40,14 @@
         <client>site</client>
     </update>
     <update>
-        <name>Pretty Buttons 1.0.3</name>
+        <name>Pretty Buttons 1.0.4</name>
         <description/>
         <element>mod_prettybuttons</element>
         <type>module</type>
-        <version>1.0.3</version>
+        <version>1.0.4</version>
         <downloads>
             <downloadurl type="full" format="zip">
-                https://github.com/TLWebdesign/pretty-buttons/archive/refs/tags/V1.0.3.zip
+                https://github.com/TLWebdesign/pretty-buttons/archive/refs/tags/V1.0.4.zip
             </downloadurl>
         </downloads>
         <tags>

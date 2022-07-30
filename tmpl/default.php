@@ -16,14 +16,14 @@ if ($block == 1)
 }
 ?>
 
-<div class="d-flex flex-column">
+<div class="d-flex flex-column pretty-buttons">
     <?php if ($before) : ?>
-        <div class="">
+        <div class="before">
             <?php echo $before; ?>
         </div>
     <?php endif; // if before?>
     <?php if (is_object($buttons)) : ?>
-        <div class="<?php echo $wrapperClass; ?> <?php echo $customouterclass; ?>">
+        <div class="<?php echo $wrapperClass; ?> <?php echo $customouterclass; ?> pb-button-div">
             <?php foreach($buttons as $button) :
                 if ($button->url && ($button->iconclass || $button->buttontext)) :
                     ?>
@@ -43,7 +43,7 @@ if ($block == 1)
         </div>
     <?php endif; // if is_object(buttons) ?>
     <?php if ($after) : ?>
-        <div class="">
+        <div class="after">
             <?php echo $after; ?>
         </div>
     <?php endif; // if before?>

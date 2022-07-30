@@ -25,7 +25,7 @@ if ($block == 1)
     <?php if (is_object($buttons)) : ?>
         <div class="<?php echo $wrapperClass; ?> <?php echo $customouterclass; ?>">
             <?php foreach($buttons as $button) :
-                if ($button->url && ($button->iconclass || $button->text)) :
+                if ($button->url && ($button->iconclass || $button->buttontext)) :
                     ?>
                     <a class="
                         <?php echo ($button->buttonclass && is_array($button->buttonclass)) ? implode(" ", $button->buttonclass): $button->buttonclass; ?>
@@ -37,7 +37,7 @@ if ($block == 1)
                         <?php echo $button->buttontext; ?>
                     </a>
                 <?php
-                endif; // if $button->text
+                endif; // if $button->buttontext
             endforeach; // foreach $buttons as $button
             ?>
         </div>

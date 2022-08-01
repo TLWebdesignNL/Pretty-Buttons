@@ -22,10 +22,20 @@
 		<fields name="params">
 			<fieldset name="basic">
 				<field
+						name="logo"
+						type="note"
+						description="MOD_PRETTYBUTTONS_FIELD_LOGO_DESC"
+				/>
+				<field
+						name="ownerinfo"
+						type="note"
+						description="MOD_PRETTYBUTTONS_FIELD_OWNERINFO_DESC"
+				/>
+				<field
 						name="info"
 						type="note"
-						description="MOD_PRETTYBUTTONS_FIELD_NOTE_DESC"
-					/>
+						description="MOD_PRETTYBUTTONS_FIELD_INFO_DESC"
+				/>
 			</fieldset>
 			<fieldset name="content" label="MOD_PRETTYBUTTONS_FIELDSET_CONTENT">
 				<field

@@ -7,19 +7,19 @@
  * @license     GNU General Public License version 2 or later; see LICENSE.txt
  */
 
-namespace TlwebNamespace\Module\Topbarcontact\Site\Helper;
+namespace TlwebNamespace\Module\Prettybuttons\Site\Helper;
 
 \defined('_JEXEC') or die;
 
 /**
- * Helper for mod_topbarcontact
+ * Helper for mod_prettybuttons
  *
  * @since  V1.0.0
  */
-class TopbarcontactHelper
+class PrettybuttonsHelper
 {
 	/**
-	 * Retrieve Topbarcontact test
+	 * Retrieve Prettybuttons test
 	 *
 	 * @param   Registry        $params  The module parameters
 	 * @param   CMSApplication  $app     The application
@@ -28,6 +28,6 @@ class TopbarcontactHelper
 	 */
 	public static function getText()
 	{
-		return 'TopbarcontactHelpertest';
+		return 'PrettybuttonsHelpertest';
 	}
 }

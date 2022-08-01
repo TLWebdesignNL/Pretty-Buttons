@@ -7,7 +7,7 @@
 	<authorUrl>https://tlwebdesign.nl</authorUrl>
 	<copyright>TLWebdesign.nl</copyright>
 	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
-	<version>1.0.4</version>
+	<version>1.1.0</version>
 	<description>MOD_PRETTYBUTTONS_XML_DESCRIPTION</description>
 	<scriptfile>script.php</scriptfile>
 	<namespace path="src">TlwebNamespace\Module\Prettybuttons</namespace>
@@ -21,6 +21,33 @@
 	<config>
 		<fields name="params">
 			<fieldset name="basic">
+				<field
+						name="info"
+						type="note"
+						description="MOD_PRETTYBUTTONS_FIELD_NOTE_DESC"
+					/>
+			</fieldset>
+			<fieldset name="content" label="MOD_PRETTYBUTTONS_FIELDSET_CONTENT">
+				<field
+						name="before"
+						type="editor"
+						label="MOD_PRETTYBUTTONS_FIELD_BEFORE_LABEL"
+						description="MOD_PRETTYBUTTONS_FIELD_BEFORE_DESC"
+						width="100%"
+						height="250px"
+						filter="safehtml"
+				/>
+				<field
+						name="after"
+						type="editor"
+						label="MOD_PRETTYBUTTONS_FIELD_AFTER_LABEL"
+						description="MOD_PRETTYBUTTONS_FIELD_AFTER_DESC"
+						width="100%"
+						height="250px"
+						filter="safehtml"
+				/>
+			</fieldset>
+			<fieldset name="buttons" label="MOD_PRETTYBUTTONS_FIELDSET_BUTTONS_LABEL">
 				<field
 						name="block"
 						type="radio"
@@ -39,15 +66,6 @@
 						description="MOD_PRETTYBUTTONS_FIELD_CUSTOMOUTERCLASS_DESC"
 				/>
 				<field
-						name="before"
-						type="editor"
-						label="MOD_PRETTYBUTTONS_FIELD_BEFORE_LABEL"
-						description="MOD_PRETTYBUTTONS_FIELD_BEFORE_DESC"
-						width="100%"
-						height="250px"
-						filter="safehtml"
-				/>
-				<field
 						name="buttons"
 						type="subform"
 						label="MOD_PRETTYBUTTONS_FIELD_BUTTONS_LABEL"
@@ -58,12 +76,6 @@
 				>
 					<form>
 						<field
-								name="iconclass"
-								type="text"
-								label="Icon Class"
-								hint="fas fa-home"
-						/>
-						<field
 								name="buttontext"
 								type="text"
 								label="MOD_PRETTYBUTTONS_FIELD_BUTTONTEXT_LABEL"
@@ -73,33 +85,52 @@
 						<field
 								name="url"
 								type="text"
+								required="true"
 								label="MOD_PRETTYBUTTONS_FIELD_URL_LABEL"
 								hint="MOD_PRETTYBUTTONS_FIELD_URL_HINT"
 								description="MOD_PRETTYBUTTONS_FIELD_URL_DESC"
 						/>
 						<field
-								name="buttonclass"
+								name="buttontarget"
 								type="list"
+								default="_blank"
+								required="true"
+								label="MOD_PRETTYBUTTONS_FIELD_BUTTONTARGET_LABEL"
+								description="MOD_PRETTYBUTTONS_FIELD_BUTTONTARGET_DESC"
+						>
+							<option value="_blank" checked="true">MOD_PRETTYBUTTONS_FIELD_BUTTONTARGET_BLANK</option>
+							<option value="_self">MOD_PRETTYBUTTONS_FIELD_BUTTONTARGET_SELF</option>
+						</field>
+						<field
+								name="iconclass"
+								type="text"
+								label="MOD_PRETTYBUTTONS_FIELD_ICONCLASS_LABEL"
+								description="MOD_PRETTYBUTTONS_FIELD_ICONCLASS_DESC"
+								hint="fas fa-home"
+						/>
+						<field
+								name="buttonclass"
+								type="checkboxes"
 								default=""
 								required="true"
 								label="MOD_PRETTYBUTTONS_FIELD_BUTTONCLASS_LABEL"
 								description="MOD_PRETTYBUTTONS_FIELD_BUTTONCLASS_DESC"
 								multiple="true"
 						>
-							<option value="btn">btn</option>
-							<option value="btn-primary">btn-primary</option>
-							<option value="btn-secondary">btn-secondary</option>
-							<option value="btn-success">btn-success</option>
-							<option value="btn-danger">btn-danger</option>
-							<option value="btn-warning">btn-warning</option>
-							<option value="btn-info">btn-info</option>
-							<option value="btn-light">btn-light</option>
-							<option value="btn-dark">btn-dark</option>
-							<option value="btn-link">btn-link</option>
-							<option value="btn-lg">btn-lg</option>
-							<option value="btn-sm">btn-small</option>
-							<option value="w-100">BS5 full width button</option>
-							<option value="custom">Custom Class</option>
+							<option value="btn" checked="true">MOD_PRETTYBUTTONS_BUTTONCLASS_BTN</option>
+							<option value="btn-primary">MOD_PRETTYBUTTONS_BUTTONCLASS_BTNPRIMARY</option>
+							<option value="btn-secondary">MOD_PRETTYBUTTONS_BUTTONCLASS_BTNSECONDARY</option>
+							<option value="btn-success">MOD_PRETTYBUTTONS_BUTTONCLASS_BTNSUCCESS</option>
+							<option value="btn-danger">MOD_PRETTYBUTTONS_BUTTONCLASS_BTNDANGER</option>
+							<option value="btn-warning">MOD_PRETTYBUTTONS_BUTTONCLASS_BTNWARNING</option>
+							<option value="btn-info">MOD_PRETTYBUTTONS_BUTTONCLASS_BTNINFO</option>
+							<option value="btn-light">MOD_PRETTYBUTTONS_BUTTONCLASS_BTNLIGHT</option>
+							<option value="btn-dark">MOD_PRETTYBUTTONS_BUTTONCLASS_BTNDARK</option>
+							<option value="btn-link">MOD_PRETTYBUTTONS_BUTTONCLASS_BTNLINK</option>
+							<option value="btn-lg">MOD_PRETTYBUTTONS_BUTTONCLASS_BTNLG</option>
+							<option value="btn-sm">MOD_PRETTYBUTTONS_BUTTONCLASS_BTNSM</option>
+							<option value="w-100">MOD_PRETTYBUTTONS_BUTTONCLASS_W100</option>
+							<option value="custom">MOD_PRETTYBUTTONS_BUTTONCLASS_CUSTOMCLASS</option>
 						</field>
 						<field
 								name="custombuttonclass"
@@ -111,15 +142,6 @@
 						/>
 					</form>
 				</field>
-				<field
-						name="after"
-						type="editor"
-						label="MOD_PRETTYBUTTONS_FIELD_AFTER_LABEL"
-						description="MOD_PRETTYBUTTONS_FIELD_AFTER_DESC"
-						width="100%"
-						height="250px"
-						filter="safehtml"
-				/>
 			</fieldset>
 		</fields>
 	</config>

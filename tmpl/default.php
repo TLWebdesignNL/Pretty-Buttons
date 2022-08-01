@@ -9,9 +9,8 @@
 
 \defined('_JEXEC') or die;
 
-$wrapperClass="";
-if ($block == 1)
-{
+$wrapperClass = "";
+if ($block == 1) {
     $wrapperClass = "d-grid gap-2";
 }
 ?>
@@ -21,20 +20,21 @@ if ($block == 1)
         <div class="before">
             <?php echo $before; ?>
         </div>
-    <?php endif; // if before?>
+    <?php endif; // if before ?>
     <?php if (is_object($buttons)) : ?>
         <div class="<?php echo $wrapperClass; ?> <?php echo $customouterclass; ?> pb-button-div">
-            <?php foreach($buttons as $button) :
+            <?php foreach ($buttons as $button) :
                 if ($button->url && ($button->iconclass || $button->buttontext)) :
                     ?>
                     <a class="
-                        <?php echo ($button->buttonclass && is_array($button->buttonclass)) ? implode(" ", $button->buttonclass): $button->buttonclass; ?>
-                        <?php echo ($button->custombuttonclass) ? $button->custombuttonclass : ''; ?>"
+                        <?php echo (isset($button->buttonclass) && is_array($button->buttonclass)) ? implode(" ", $button->buttonclass) : $button->buttonclass; ?>
+                        <?php echo (isset($button->custombuttonclass)) ? $button->custombuttonclass : ''; ?>"
                        href="<?php echo $button->url; ?>"
-                       target="_blank"
+                       target="<?php echo (isset($button->buttontarget)) ? $button->buttontarget : "_blank" ; ?>"
+                       aria-label="<?php echo (isset($button->buttontext)) ? $button->buttontext : ''; ?>"
                     >
-                        <?php echo ($button->iconclass) ? '<i class="'.$button->iconclass.' pe-2"></i> ' : '' ; ?>
-                        <?php echo $button->buttontext; ?>
+                        <?php echo (isset($button->iconclass)) ? '<i class="' . $button->iconclass . ' pe-2"></i> ' : ''; ?>
+                        <?php echo (isset($button->buttontext)) ? $button->buttontext : ''; ?>
                     </a>
                 <?php
                 endif; // if $button->buttontext

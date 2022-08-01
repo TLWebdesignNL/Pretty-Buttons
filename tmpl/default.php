@@ -30,10 +30,13 @@ if ($block == 1) {
                         <?php echo (isset($button->buttonclass) && is_array($button->buttonclass)) ? implode(" ", $button->buttonclass) : $button->buttonclass; ?>
                         <?php echo (isset($button->custombuttonclass)) ? $button->custombuttonclass : ''; ?>"
                        href="<?php echo $button->url; ?>"
-                       target="<?php echo (isset($button->buttontarget)) ? $button->buttontarget : "_blank" ; ?>"
+                       target="<?php echo (isset($button->buttontarget)) ? $button->buttontarget : "_blank"; ?>"
                        aria-label="<?php echo (isset($button->buttontext)) ? $button->buttontext : ''; ?>"
                     >
-                        <?php echo (isset($button->iconclass)) ? '<i class="' . $button->iconclass . ' pe-2"></i> ' : ''; ?>
+                        <?php if (isset($button->iconclass)) : ?>
+                            <i class="<?php echo $button->iconclass; ?> <?php echo (isset($button->buttontext) && $button->buttontext != "") ? 'pe-2' : ''; ?>"></i>
+                        <?php endif; // if $button->iconclass
+                        ?>
                         <?php echo (isset($button->buttontext)) ? $button->buttontext : ''; ?>
                     </a>
                 <?php

@@ -73,6 +73,7 @@
         <tags>
             <tag>stable</tag>
         </tags>
+        <sha256>c6bb0b3e80cd097111261223d04359286e57ef7b9cb289e2aaae8f90e8d6644c</sha256>
         <maintainer>TLWebdesign</maintainer>
         <maintainerurl>https://www.tlwebdesign.nl/</maintainerurl>
         <section>Updates</section>

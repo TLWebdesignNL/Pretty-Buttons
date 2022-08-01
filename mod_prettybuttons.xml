@@ -1,161 +1,163 @@
 <?xml version="1.0" encoding="utf-8"?>
 <extension type="module" client="site" method="upgrade">
-	<name>MOD_PRETTYBUTTONS</name>
-	<creationDate>07-26-2022</creationDate>
-	<author>Tom van der Laan</author>
-	<authorEmail>info@tlwebdesign.nl</authorEmail>
-	<authorUrl>https://tlwebdesign.nl</authorUrl>
-	<copyright>TLWebdesign.nl</copyright>
-	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
-	<version>1.1.0</version>
-	<description>MOD_PRETTYBUTTONS_XML_DESCRIPTION</description>
-	<scriptfile>script.php</scriptfile>
-	<namespace path="src">TlwebNamespace\Module\Prettybuttons</namespace>
-	<files>
-		<filename module="mod_prettybuttons">mod_prettybuttons.php</filename>
-		<folder>tmpl</folder>
-		<folder>src</folder>
-		<folder>language</folder>
-		<filename>mod_prettybuttons.xml</filename>
-	</files>
-	<config>
-		<fields name="params">
-			<fieldset name="basic">
-				<field
-						name="logo"
-						type="note"
-						description="MOD_PRETTYBUTTONS_FIELD_LOGO_DESC"
-				/>
-				<field
-						name="ownerinfo"
-						type="note"
-						description="MOD_PRETTYBUTTONS_FIELD_OWNERINFO_DESC"
-				/>
-				<field
-						name="info"
-						type="note"
-						description="MOD_PRETTYBUTTONS_FIELD_INFO_DESC"
-				/>
-			</fieldset>
-			<fieldset name="content" label="MOD_PRETTYBUTTONS_FIELDSET_CONTENT">
-				<field
-						name="before"
-						type="editor"
-						label="MOD_PRETTYBUTTONS_FIELD_BEFORE_LABEL"
-						description="MOD_PRETTYBUTTONS_FIELD_BEFORE_DESC"
-						width="100%"
-						height="250px"
-						filter="safehtml"
-				/>
-				<field
-						name="after"
-						type="editor"
-						label="MOD_PRETTYBUTTONS_FIELD_AFTER_LABEL"
-						description="MOD_PRETTYBUTTONS_FIELD_AFTER_DESC"
-						width="100%"
-						height="250px"
-						filter="safehtml"
-				/>
-			</fieldset>
-			<fieldset name="buttons" label="MOD_PRETTYBUTTONS_FIELDSET_BUTTONS_LABEL">
-				<field
-						name="block"
-						type="radio"
-						default="0"
-						label="MOD_PRETTYBUTTONS_FIELD_BLOCK_LABEL"
-						description="MOD_PRETTYBUTTONS_FIELD_BLOCK_DESC"
-						class="btn-group btn-group-yesno">
-					<option value="1">JYES</option>
-					<option value="0">JNO</option>
-				</field>
-				<field
-						name="customouterclass"
-						type="text"
-						default="py-3"
-						label="MOD_PRETTYBUTTONS_FIELD_CUSTOMOUTERCLASS_LABEL"
-						description="MOD_PRETTYBUTTONS_FIELD_CUSTOMOUTERCLASS_DESC"
-				/>
-				<field
-						name="buttons"
-						type="subform"
-						label="MOD_PRETTYBUTTONS_FIELD_BUTTONS_LABEL"
-						description="MOD_PRETTYBUTTONS_FIELD_BUTTONS_DESC"
-						multiple="true"
-						min="1"
-						max="10"
-				>
-					<form>
-						<field
-								name="buttontext"
-								type="text"
-								label="MOD_PRETTYBUTTONS_FIELD_BUTTONTEXT_LABEL"
-								hint="MOD_PRETTYBUTTONS_FIELD_BUTTONTEXT_HINT"
-								description="MOD_PRETTYBUTTONS_FIELD_BUTTONTEXT_DESC"
-						/>
-						<field
-								name="url"
-								type="text"
-								required="true"
-								label="MOD_PRETTYBUTTONS_FIELD_URL_LABEL"
-								hint="MOD_PRETTYBUTTONS_FIELD_URL_HINT"
-								description="MOD_PRETTYBUTTONS_FIELD_URL_DESC"
-						/>
-						<field
-								name="buttontarget"
-								type="list"
-								default="_blank"
-								required="true"
-								label="MOD_PRETTYBUTTONS_FIELD_BUTTONTARGET_LABEL"
-								description="MOD_PRETTYBUTTONS_FIELD_BUTTONTARGET_DESC"
-						>
-							<option value="_blank" checked="true">MOD_PRETTYBUTTONS_FIELD_BUTTONTARGET_BLANK</option>
-							<option value="_self">MOD_PRETTYBUTTONS_FIELD_BUTTONTARGET_SELF</option>
-						</field>
-						<field
-								name="iconclass"
-								type="text"
-								label="MOD_PRETTYBUTTONS_FIELD_ICONCLASS_LABEL"
-								description="MOD_PRETTYBUTTONS_FIELD_ICONCLASS_DESC"
-								hint="fas fa-home"
-						/>
-						<field
-								name="buttonclass"
-								type="checkboxes"
-								default=""
-								required="true"
-								label="MOD_PRETTYBUTTONS_FIELD_BUTTONCLASS_LABEL"
-								description="MOD_PRETTYBUTTONS_FIELD_BUTTONCLASS_DESC"
-								multiple="true"
-						>
-							<option value="btn" checked="true">MOD_PRETTYBUTTONS_BUTTONCLASS_BTN</option>
-							<option value="btn-primary">MOD_PRETTYBUTTONS_BUTTONCLASS_BTNPRIMARY</option>
-							<option value="btn-secondary">MOD_PRETTYBUTTONS_BUTTONCLASS_BTNSECONDARY</option>
-							<option value="btn-success">MOD_PRETTYBUTTONS_BUTTONCLASS_BTNSUCCESS</option>
-							<option value="btn-danger">MOD_PRETTYBUTTONS_BUTTONCLASS_BTNDANGER</option>
-							<option value="btn-warning">MOD_PRETTYBUTTONS_BUTTONCLASS_BTNWARNING</option>
-							<option value="btn-info">MOD_PRETTYBUTTONS_BUTTONCLASS_BTNINFO</option>
-							<option value="btn-light">MOD_PRETTYBUTTONS_BUTTONCLASS_BTNLIGHT</option>
-							<option value="btn-dark">MOD_PRETTYBUTTONS_BUTTONCLASS_BTNDARK</option>
-							<option value="btn-link">MOD_PRETTYBUTTONS_BUTTONCLASS_BTNLINK</option>
-							<option value="btn-lg">MOD_PRETTYBUTTONS_BUTTONCLASS_BTNLG</option>
-							<option value="btn-sm">MOD_PRETTYBUTTONS_BUTTONCLASS_BTNSM</option>
-							<option value="w-100">MOD_PRETTYBUTTONS_BUTTONCLASS_W100</option>
-							<option value="custom">MOD_PRETTYBUTTONS_BUTTONCLASS_CUSTOMCLASS</option>
-						</field>
-						<field
-								name="custombuttonclass"
-								type="text"
-								label="MOD_PRETTYBUTTONS_FIELD_CUSTOMBUTTONCLASS_LABEL"
-								hint="btn btn-primary"
-								description="MOD_PRETTYBUTTONS_FIELD_CUSTOMBUTTONCLASS_DESC"
-								showon="buttonclass:custom"
-						/>
-					</form>
-				</field>
-			</fieldset>
-		</fields>
-	</config>
-	<updateservers>
-		<server type="extension" priority="2" name="Pretty Buttons Updates">https://raw.githubusercontent.com/TLWebdesign/pretty-buttons/main/updates.xml</server>
-	</updateservers>
+    <name>MOD_PRETTYBUTTONS</name>
+    <creationDate>07-26-2022</creationDate>
+    <author>Tom van der Laan</author>
+    <authorEmail>info@tlwebdesign.nl</authorEmail>
+    <authorUrl>https://tlwebdesign.nl</authorUrl>
+    <copyright>TLWebdesign.nl</copyright>
+    <license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+    <version>1.1.0</version>
+    <description>MOD_PRETTYBUTTONS_XML_DESCRIPTION</description>
+    <scriptfile>script.php</scriptfile>
+    <namespace path="src">TlwebNamespace\Module\Prettybuttons</namespace>
+    <files>
+        <filename module="mod_prettybuttons">mod_prettybuttons.php</filename>
+        <folder>tmpl</folder>
+        <folder>src</folder>
+        <folder>language</folder>
+        <filename>mod_prettybuttons.xml</filename>
+    </files>
+    <config>
+        <fields name="params">
+            <fieldset name="basic">
+                <field
+                        name="logo"
+                        type="note"
+                        description="MOD_PRETTYBUTTONS_FIELD_LOGO_DESC"
+                />
+                <field
+                        name="ownerinfo"
+                        type="note"
+                        description="MOD_PRETTYBUTTONS_FIELD_OWNERINFO_DESC"
+                />
+                <field
+                        name="info"
+                        type="note"
+                        description="MOD_PRETTYBUTTONS_FIELD_INFO_DESC"
+                />
+            </fieldset>
+            <fieldset name="content" label="MOD_PRETTYBUTTONS_FIELDSET_CONTENT">
+                <field
+                        name="before"
+                        type="editor"
+                        label="MOD_PRETTYBUTTONS_FIELD_BEFORE_LABEL"
+                        description="MOD_PRETTYBUTTONS_FIELD_BEFORE_DESC"
+                        width="100%"
+                        height="250px"
+                        filter="safehtml"
+                />
+                <field
+                        name="after"
+                        type="editor"
+                        label="MOD_PRETTYBUTTONS_FIELD_AFTER_LABEL"
+                        description="MOD_PRETTYBUTTONS_FIELD_AFTER_DESC"
+                        width="100%"
+                        height="250px"
+                        filter="safehtml"
+                />
+            </fieldset>
+            <fieldset name="buttons" label="MOD_PRETTYBUTTONS_FIELDSET_BUTTONS_LABEL">
+                <field
+                        name="block"
+                        type="radio"
+                        default="0"
+                        label="MOD_PRETTYBUTTONS_FIELD_BLOCK_LABEL"
+                        description="MOD_PRETTYBUTTONS_FIELD_BLOCK_DESC"
+                        class="btn-group btn-group-yesno">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+                <field
+                        name="customouterclass"
+                        type="text"
+                        default="py-3"
+                        label="MOD_PRETTYBUTTONS_FIELD_CUSTOMOUTERCLASS_LABEL"
+                        description="MOD_PRETTYBUTTONS_FIELD_CUSTOMOUTERCLASS_DESC"
+                />
+                <field
+                        name="buttons"
+                        type="subform"
+                        label="MOD_PRETTYBUTTONS_FIELD_BUTTONS_LABEL"
+                        description="MOD_PRETTYBUTTONS_FIELD_BUTTONS_DESC"
+                        multiple="true"
+                        min="1"
+                        max="10"
+                >
+                    <form>
+                        <field
+                                name="buttontext"
+                                type="text"
+                                label="MOD_PRETTYBUTTONS_FIELD_BUTTONTEXT_LABEL"
+                                hint="MOD_PRETTYBUTTONS_FIELD_BUTTONTEXT_HINT"
+                                description="MOD_PRETTYBUTTONS_FIELD_BUTTONTEXT_DESC"
+                        />
+                        <field
+                                name="url"
+                                type="text"
+                                required="true"
+                                label="MOD_PRETTYBUTTONS_FIELD_URL_LABEL"
+                                hint="MOD_PRETTYBUTTONS_FIELD_URL_HINT"
+                                description="MOD_PRETTYBUTTONS_FIELD_URL_DESC"
+                        />
+                        <field
+                                name="buttontarget"
+                                type="list"
+                                default="_blank"
+                                required="true"
+                                label="MOD_PRETTYBUTTONS_FIELD_BUTTONTARGET_LABEL"
+                                description="MOD_PRETTYBUTTONS_FIELD_BUTTONTARGET_DESC"
+                        >
+                            <option value="_blank" checked="true">MOD_PRETTYBUTTONS_FIELD_BUTTONTARGET_BLANK</option>
+                            <option value="_self">MOD_PRETTYBUTTONS_FIELD_BUTTONTARGET_SELF</option>
+                        </field>
+                        <field
+                                name="iconclass"
+                                type="text"
+                                label="MOD_PRETTYBUTTONS_FIELD_ICONCLASS_LABEL"
+                                description="MOD_PRETTYBUTTONS_FIELD_ICONCLASS_DESC"
+                                hint="fas fa-home"
+                        />
+                        <field
+                                name="buttonclass"
+                                type="checkboxes"
+                                default=""
+                                required="true"
+                                label="MOD_PRETTYBUTTONS_FIELD_BUTTONCLASS_LABEL"
+                                description="MOD_PRETTYBUTTONS_FIELD_BUTTONCLASS_DESC"
+                                multiple="true"
+                        >
+                            <option value="btn" checked="true">MOD_PRETTYBUTTONS_BUTTONCLASS_BTN</option>
+                            <option value="btn-primary">MOD_PRETTYBUTTONS_BUTTONCLASS_BTNPRIMARY</option>
+                            <option value="btn-secondary">MOD_PRETTYBUTTONS_BUTTONCLASS_BTNSECONDARY</option>
+                            <option value="btn-success">MOD_PRETTYBUTTONS_BUTTONCLASS_BTNSUCCESS</option>
+                            <option value="btn-danger">MOD_PRETTYBUTTONS_BUTTONCLASS_BTNDANGER</option>
+                            <option value="btn-warning">MOD_PRETTYBUTTONS_BUTTONCLASS_BTNWARNING</option>
+                            <option value="btn-info">MOD_PRETTYBUTTONS_BUTTONCLASS_BTNINFO</option>
+                            <option value="btn-light">MOD_PRETTYBUTTONS_BUTTONCLASS_BTNLIGHT</option>
+                            <option value="btn-dark">MOD_PRETTYBUTTONS_BUTTONCLASS_BTNDARK</option>
+                            <option value="btn-link">MOD_PRETTYBUTTONS_BUTTONCLASS_BTNLINK</option>
+                            <option value="btn-lg">MOD_PRETTYBUTTONS_BUTTONCLASS_BTNLG</option>
+                            <option value="btn-sm">MOD_PRETTYBUTTONS_BUTTONCLASS_BTNSM</option>
+                            <option value="w-100">MOD_PRETTYBUTTONS_BUTTONCLASS_W100</option>
+                            <option value="custom">MOD_PRETTYBUTTONS_BUTTONCLASS_CUSTOMCLASS</option>
+                        </field>
+                        <field
+                                name="custombuttonclass"
+                                type="text"
+                                label="MOD_PRETTYBUTTONS_FIELD_CUSTOMBUTTONCLASS_LABEL"
+                                hint="btn btn-primary"
+                                description="MOD_PRETTYBUTTONS_FIELD_CUSTOMBUTTONCLASS_DESC"
+                                showon="buttonclass:custom"
+                        />
+                    </form>
+                </field>
+            </fieldset>
+        </fields>
+    </config>
+    <updateservers>
+        <server type="extension" priority="2" name="Pretty Buttons Updates">
+            https://raw.githubusercontent.com/TLWebdesign/pretty-buttons/main/updates.xml
+        </server>
+    </updateservers>
 </extension>

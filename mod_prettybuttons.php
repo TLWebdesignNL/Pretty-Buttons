@@ -14,10 +14,10 @@ use TlwebNamespace\Module\Prettybuttons\Site\Helper\PrettybuttonsHelper;
 
 //$test  = PrettybuttonsHelper::getText();
 
-$block = $params->get('block');
+$block            = $params->get('block');
 $customouterclass = $params->get('customouterclass');
-$before = $params->get('before');
-$buttons = $params->get('buttons');
-$after = $params->get('after');
+$before           = $params->get('before');
+$buttons          = $params->get('buttons');
+$after            = $params->get('after');
 
 require ModuleHelper::getLayoutPath('mod_prettybuttons', $params->get('layout', 'default'));

@@ -157,7 +157,7 @@
     </config>
     <updateservers>
         <server type="extension" priority="2" name="Pretty Buttons Updates">
-            https://raw.githubusercontent.com/TLWebdesign/pretty-buttons/main/updates.xml
+            https://raw.githubusercontent.com/TLWebdesign/Pretty-Buttons/main/updates.xml
         </server>
     </updateservers>
 </extension>

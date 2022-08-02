@@ -18,6 +18,9 @@
         <folder>language</folder>
         <filename>mod_prettybuttons.xml</filename>
     </files>
+    <media folder="media" destination="mod_prettybuttons">
+        <filename>logo.svg</filename>
+    </media>
     <config>
         <fields name="params">
             <fieldset name="basic">

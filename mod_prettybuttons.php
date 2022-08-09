@@ -12,7 +12,7 @@
 use Joomla\CMS\Helper\ModuleHelper;
 use TlwebNamespace\Module\Prettybuttons\Site\Helper\PrettybuttonsHelper;
 
-//$test  = PrettybuttonsHelper::getText();
+// $test  = PrettybuttonsHelper::getText();
 
 $block            = $params->get('block');
 $customouterclass = $params->get('customouterclass');

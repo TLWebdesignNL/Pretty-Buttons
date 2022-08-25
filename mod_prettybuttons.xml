@@ -85,7 +85,7 @@
                         description="MOD_PRETTYBUTTONS_FIELD_BUTTONS_DESC"
                         multiple="true"
                         min="1"
-                        max="10"
+                        max="99"
                 >
                     <form>
                         <field

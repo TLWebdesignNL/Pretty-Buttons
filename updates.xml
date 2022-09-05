@@ -101,4 +101,4 @@
         <targetplatform name="joomla" version="4.*"/>
         <client>site</client>
     </update>
- </updates>
+</updates>

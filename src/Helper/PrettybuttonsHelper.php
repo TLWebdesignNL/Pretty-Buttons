@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @package     Joomla.Site
  * @subpackage  mod_prettybuttons
@@ -18,16 +19,16 @@ namespace TlwebNamespace\Module\Prettybuttons\Site\Helper;
  */
 class PrettybuttonsHelper
 {
-	/**
-	 * Retrieve Prettybuttons test
-	 *
-	 * @param   Registry        $params  The module parameters
-	 * @param   CMSApplication  $app     The application
-	 *
-	 * @return  array
-	 */
-	public static function getText()
-	{
-		return 'PrettybuttonsHelpertest';
-	}
+    /**
+     * Retrieve Prettybuttons test
+     *
+     * @param   Registry        $params  The module parameters
+     * @param   CMSApplication  $app     The application
+     *
+     * @return  string
+     */
+    public static function getText()
+    {
+        return 'PrettybuttonsHelpertest';
+    }
 }

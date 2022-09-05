@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @package     Joomla.Site
  * @subpackage  mod_prettybuttons
@@ -10,7 +11,7 @@
 \defined('_JEXEC') or die;
 
 use Joomla\CMS\Helper\ModuleHelper;
-use TlwebNamespace\Module\Prettybuttons\Site\Helper\PrettybuttonsHelper;
+//use TlwebNamespace\Module\Prettybuttons\Site\Helper\PrettybuttonsHelper;
 
 // $test  = PrettybuttonsHelper::getText();
 

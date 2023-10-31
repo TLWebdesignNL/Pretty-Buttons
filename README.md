@@ -1,4 +1,4 @@
-# Pretty Buttons Module for Joomla 4
+# Pretty Buttons Module for Joomla 4 & Joomla 5
 
 This module lets you add buttons to your website. You can add icons via the icon class field, button classes via the button class field and a text and link. 
 

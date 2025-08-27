@@ -67,7 +67,8 @@
                         default="0"
                         label="MOD_PRETTYBUTTONS_FIELD_BLOCK_LABEL"
                         description="MOD_PRETTYBUTTONS_FIELD_BLOCK_DESC"
-                        class="btn-group btn-group-yesno">
+                        class="btn-group btn-group-yesno"
+                >
                     <option value="1">JYES</option>
                     <option value="0">JNO</option>
                 </field>

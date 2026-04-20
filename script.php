@@ -11,6 +11,7 @@
 // No direct access to this file
 \defined('_JEXEC') or die;
 
+use Joomla\CMS\Factory;
 use Joomla\CMS\Language\Text;
 use Joomla\CMS\Log\Log;
 
@@ -39,7 +40,7 @@ class mod_prettybuttonsInstallerScript
      */
     function install($parent)
     {
-        echo Text::_('MOD_PRETTYBUTTONS_INSTALLERSCRIPT_INSTALL');
+        Factory::getApplication()->enqueueMessage(Text::_('MOD_PRETTYBUTTONS_INSTALLERSCRIPT_INSTALL'));
 
         return true;
     }
@@ -53,7 +54,7 @@ class mod_prettybuttonsInstallerScript
      */
     function uninstall($parent)
     {
-        echo Text::_('MOD_PRETTYBUTTONS_INSTALLERSCRIPT_UNINSTALL');
+        Factory::getApplication()->enqueueMessage(Text::_('MOD_PRETTYBUTTONS_INSTALLERSCRIPT_UNINSTALL'));
 
         return true;
     }
@@ -67,7 +68,7 @@ class mod_prettybuttonsInstallerScript
      */
     function update($parent)
     {
-        echo Text::_('MOD_PRETTYBUTTONS_INSTALLERSCRIPT_UPDATE');
+        Factory::getApplication()->enqueueMessage(Text::_('MOD_PRETTYBUTTONS_INSTALLERSCRIPT_UPDATE'));
 
         return true;
     }
@@ -96,7 +97,7 @@ class mod_prettybuttonsInstallerScript
             return false;
         }
 
-        echo Text::_('MOD_PRETTYBUTTONS_INSTALLERSCRIPT_PREFLIGHT');
+        Factory::getApplication()->enqueueMessage(Text::_('MOD_PRETTYBUTTONS_INSTALLERSCRIPT_PREFLIGHT'));
 
         return true;
     }
@@ -111,7 +112,7 @@ class mod_prettybuttonsInstallerScript
      */
     function postflight($type, $parent)
     {
-        echo Text::_('MOD_PRETTYBUTTONS_INSTALLERSCRIPT_POSTFLIGHT');
+        Factory::getApplication()->enqueueMessage(Text::_('MOD_PRETTYBUTTONS_INSTALLERSCRIPT_POSTFLIGHT'));
 
         return true;
     }

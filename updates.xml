@@ -120,7 +120,7 @@
         <tags>
             <tag>stable</tag>
         </tags>
-        <sha256></sha256>
+        <sha256>87f2d83d90cb59b4df92cc317a85f09926c566940cbd000f9a63d7e2be306805</sha256>
         <changelogurl>https://raw.githubusercontent.com/TLWebdesign/Pretty-Buttons/main/changelog.xml</changelogurl>
         <maintainer>TLWebdesign</maintainer>
         <maintainerurl>https://www.tlwebdesign.nl/</maintainerurl>

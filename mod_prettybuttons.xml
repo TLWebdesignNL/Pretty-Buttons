@@ -7,22 +7,24 @@
     <authorUrl>https://tlwebdesign.nl</authorUrl>
     <copyright>TLWebdesign.nl</copyright>
     <license>GNU General Public License version 2 or later; see LICENSE.txt</license>
-    <version>1.1.1</version>
+    <version>1.2.0</version>
     <description>MOD_PRETTYBUTTONS_XML_DESCRIPTION</description>
     <scriptfile>script.php</scriptfile>
     <namespace path="src">TlwebNamespace\Module\Prettybuttons</namespace>
     <files>
-        <filename module="mod_prettybuttons">mod_prettybuttons.php</filename>
+        <folder module="mod_prettybuttons">services</folder>
         <folder>tmpl</folder>
         <folder>src</folder>
+        <folder>fields</folder>
         <folder>language</folder>
         <filename>mod_prettybuttons.xml</filename>
     </files>
     <media folder="media" destination="mod_prettybuttons">
         <filename>logo.svg</filename>
+        <folder>js</folder>
     </media>
     <config>
-        <fields name="params">
+        <fields name="params" addfieldpath="/modules/mod_prettybuttons/fields">
             <fieldset name="basic">
                 <field
                         name="logo"
@@ -80,6 +82,17 @@
                         description="MOD_PRETTYBUTTONS_FIELD_CUSTOMOUTERCLASS_DESC"
                 />
                 <field
+                        name="enable_aria_label"
+                        type="togglearia"
+                        default="0"
+                        label="MOD_PRETTYBUTTONS_FIELD_ENABLE_ARIA_LABEL_LABEL"
+                        description="MOD_PRETTYBUTTONS_FIELD_ENABLE_ARIA_LABEL_DESC"
+                        class="btn-group btn-group-yesno"
+                >
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+                <field
                         name="buttons"
                         type="subform"
                         label="MOD_PRETTYBUTTONS_FIELD_BUTTONS_LABEL"
@@ -121,6 +134,12 @@
                                 label="MOD_PRETTYBUTTONS_FIELD_ICONCLASS_LABEL"
                                 description="MOD_PRETTYBUTTONS_FIELD_ICONCLASS_DESC"
                                 hint="fas fa-home"
+                        />
+                        <field
+                                name="aria_label"
+                                type="text"
+                                label="MOD_PRETTYBUTTONS_FIELD_ARIA_LABEL_LABEL"
+                                description="MOD_PRETTYBUTTONS_FIELD_ARIA_LABEL_DESC"
                         />
                         <field
                                 name="buttonclass"
@@ -167,14 +186,6 @@
                 />
 
                 <field
-                        name="moduleclass_sfx"
-                        type="textarea"
-                        label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
-                        rows="3"
-                        validate="CssIdentifier"
-                />
-
-                <field
                         name="cache"
                         type="list"
                         label="COM_MODULES_FIELD_CACHING_LABEL"
@@ -199,11 +210,12 @@
                         type="hidden"
                         default="static"
                 >
-                    <option value="static"></option>
+                    <option value="static" />
                 </field>
             </fieldset>
         </fields>
     </config>
+    <changelogurl>https://raw.githubusercontent.com/TLWebdesign/Pretty-Buttons/main/changelog.xml</changelogurl>
     <updateservers>
         <server type="extension" priority="2" name="Pretty Buttons Updates">
             https://raw.githubusercontent.com/TLWebdesign/Pretty-Buttons/main/updates.xml

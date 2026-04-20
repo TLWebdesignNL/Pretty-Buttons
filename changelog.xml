@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<changelogs>
+    <changelog>
+        <element>mod_prettybuttons</element>
+        <type>module</type>
+        <version>1.2.0</version>
+        <security>
+            <item>Improved output escaping for safer button rendering</item>
+            <item>Improved security for links that open in a new tab</item>
+        </security>
+        <fix>
+            <item>Improved installer/update compatibility for Joomla 6</item>
+            <item>Improved compatibility with newer PHP versions</item>
+            <item>Improved update cleanup of legacy files</item>
+        </fix>
+        <addition>
+            <item>Added Joomla 6 support</item>
+            <item>Added global "Enable Custom ARIA Label" setting in the Buttons fieldset</item>
+            <item>Added optional per-button ARIA label field in the button subform</item>
+        </addition>
+        <language>
+            <item>Fixed typos in English language file</item>
+        </language>
+    </changelog>
+    <changelog>
+        <element>mod_prettybuttons</element>
+        <type>module</type>
+        <version>1.1.1</version>
+        <fix>
+            <item>Fixed logo link and display issues in the module settings</item>
+            <item>Updated extension listing/support links</item>
+        </fix>
+        <addition>
+            <item>Added Joomla 5 support</item>
+        </addition>
+        <change>
+            <item>Improved handling of the module logo asset</item>
+        </change>
+    </changelog>
+    <changelog>
+        <element>mod_prettybuttons</element>
+        <type>module</type>
+        <version>1.1.0</version>
+        <addition>
+            <item>Added more advanced module options in settings</item>
+        </addition>
+        <change>
+            <item>Increased maximum number of buttons to 99</item>
+        </change>
+    </changelog>
+    <changelog>
+        <element>mod_prettybuttons</element>
+        <type>module</type>
+        <version>1.0.4</version>
+        <fix>
+            <item>Improved layout of icon-only buttons</item>
+        </fix>
+    </changelog>
+    <changelog>
+        <element>mod_prettybuttons</element>
+        <type>module</type>
+        <version>1.0.2</version>
+        <fix>
+            <item>Various bug fixes and improvements</item>
+        </fix>
+        <addition>
+            <item>Added outer div custom class option</item>
+        </addition>
+        <language>
+            <item>Dutch translation added</item>
+        </language>
+    </changelog>
+    <changelog>
+        <element>mod_prettybuttons</element>
+        <type>module</type>
+        <version>1.0.1</version>
+        <addition>
+            <item>Initial stable release</item>
+            <item>Added support for multiple button style classes</item>
+            <item>Added icon class support for buttons</item>
+            <item>Added content areas before and after buttons</item>
+            <item>Block column layout option</item>
+        </addition>
+    </changelog>
+</changelogs>

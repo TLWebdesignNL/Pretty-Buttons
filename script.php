@@ -14,106 +14,65 @@
 use Joomla\CMS\Factory;
 use Joomla\CMS\Language\Text;
 use Joomla\CMS\Log\Log;
+use Joomla\Filesystem\File;
 
 /**
  * Script file of Prettybuttons module
+ *
+ * Class name follows Joomla's installer convention: {element}InstallerScript
  */
+// phpcs:ignore PSR1.Classes.ClassDeclaration
 class mod_prettybuttonsInstallerScript
 {
-    /**
-     * Extension script constructor.
-     *
-     * @return  void
-     */
+    protected string $minimumJoomla = '4.0';
+
+    protected string $minimumPhp = '';
+
     public function __construct()
     {
-        $this->minimumJoomla = '4.0';
-        $this->minimumPhp    = JOOMLA_MINIMUM_PHP;
+        $this->minimumPhp = JOOMLA_MINIMUM_PHP;
     }
 
-    /**
-     * Method to install the extension
-     *
-     * @param   InstallerAdapter  $parent  The class calling this method
-     *
-     * @return  boolean  True on success
-     */
-    function install($parent)
+    public function install($parent): bool
     {
         Factory::getApplication()->enqueueMessage(Text::_('MOD_PRETTYBUTTONS_INSTALLERSCRIPT_INSTALL'));
 
         return true;
     }
 
-    /**
-     * Method to uninstall the extension
-     *
-     * @param   InstallerAdapter  $parent  The class calling this method
-     *
-     * @return  boolean  True on success
-     */
-    function uninstall($parent)
+    public function uninstall($parent): bool
     {
         Factory::getApplication()->enqueueMessage(Text::_('MOD_PRETTYBUTTONS_INSTALLERSCRIPT_UNINSTALL'));
 
         return true;
     }
 
-    /**
-     * Method to update the extension
-     *
-     * @param   InstallerAdapter  $parent  The class calling this method
-     *
-     * @return  boolean  True on success
-     */
-    function update($parent)
+    public function update($parent): bool
     {
         Factory::getApplication()->enqueueMessage(Text::_('MOD_PRETTYBUTTONS_INSTALLERSCRIPT_UPDATE'));
 
         return true;
     }
 
-    /**
-     * Function called before extension installation/update/removal procedure commences
-     *
-     * @param   string            $type    The type of change (install, update or discover_install, not uninstall)
-     * @param   InstallerAdapter  $parent  The class calling this method
-     *
-     * @return  boolean  True on success
-     */
-    function preflight($type, $parent)
+    public function preflight($type, $parent): bool
     {
-        // Check for the minimum PHP version before continuing
         if (!empty($this->minimumPhp) && version_compare(PHP_VERSION, $this->minimumPhp, '<')) {
             Log::add(Text::sprintf('JLIB_INSTALLER_MINIMUM_PHP', $this->minimumPhp), Log::WARNING, 'jerror');
 
             return false;
         }
 
-        // Check for the minimum Joomla version before continuing
         if (!empty($this->minimumJoomla) && version_compare(JVERSION, $this->minimumJoomla, '<')) {
             Log::add(Text::sprintf('JLIB_INSTALLER_MINIMUM_JOOMLA', $this->minimumJoomla), Log::WARNING, 'jerror');
 
             return false;
         }
 
-        Factory::getApplication()->enqueueMessage(Text::_('MOD_PRETTYBUTTONS_INSTALLERSCRIPT_PREFLIGHT'));
-
         return true;
     }
 
-    /**
-     * Function called after extension installation/update/removal procedure commences
-     *
-     * @param   string            $type    The type of change (install, update or discover_install, not uninstall)
-     * @param   InstallerAdapter  $parent  The class calling this method
-     *
-     * @return  boolean  True on success
-     */
-    function postflight($type, $parent)
+    public function postflight($type, $parent): bool
     {
-        Factory::getApplication()->enqueueMessage(Text::_('MOD_PRETTYBUTTONS_INSTALLERSCRIPT_POSTFLIGHT'));
-
         return true;
     }
 }

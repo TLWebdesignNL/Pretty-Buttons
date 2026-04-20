@@ -10,11 +10,7 @@
 
 \defined('_JEXEC') or die;
 
-$wrapperClass = "";
-
-if ($block == 1) {
-    $wrapperClass = "d-grid gap-2";
-}
+$wrapperClass = $block == 1 ? 'd-grid gap-2' : '';
 ?>
 
 <div class="d-flex flex-column pretty-buttons">
@@ -22,40 +18,49 @@ if ($block == 1) {
         <div class="before">
             <?php echo $before; ?>
         </div>
-    <?php endif; // if before ?>
-    <?php if (is_object($buttons)) : ?>
-        <div class="<?php echo $wrapperClass; ?> <?php echo $customouterclass; ?> pb-button-div">
+    <?php endif; ?>
+    <?php if (!empty($buttons)) : ?>
+        <div class="<?php echo trim(htmlspecialchars($wrapperClass . ' ' . $customouterclass, ENT_QUOTES, 'UTF-8')); ?> pb-button-div">
             <?php foreach ($buttons as $button) :
-                if ($button->url && ($button->iconclass || $button->buttontext)) :
+                if (!empty($button->url) && (!empty($button->iconclass) || !empty($button->buttontext))) :
+                    $buttonClasses = '';
+                    $target        = $button->buttontarget ?? '_blank';
+                    $rel           = $target === '_blank' ? 'noopener noreferrer' : '';
+
+                    if (!empty($button->buttonclass)) {
+                        $classes      = is_array($button->buttonclass) ? $button->buttonclass : [$button->buttonclass];
+                        $buttonClasses = implode(' ', array_map('htmlspecialchars', $classes));
+                    }
+
+                    if (!empty($button->custombuttonclass)) {
+                        $buttonClasses .= ' ' . htmlspecialchars($button->custombuttonclass, ENT_QUOTES, 'UTF-8');
+                    }
+
+                    $ariaLabel = $button->buttontext ?? '';
+
+                    if (!empty($enable_aria_label) && !empty($button->aria_label)) {
+                        $ariaLabel = $button->aria_label;
+                    }
                     ?>
-                    <a class="
-                        <?php echo (isset($button->buttonclass) && is_array($button->buttonclass)) ?
-                        implode(" ", $button->buttonclass) : $button->buttonclass; ?>
-                        <?php echo (isset($button->custombuttonclass)) ? $button->custombuttonclass : ''; ?>"
-                       href="<?php echo $button->url; ?>"
-                       target="<?php echo (isset($button->buttontarget)) ? $button->buttontarget : "_blank"; ?>"
-                       aria-label="<?php echo (isset($button->buttontext)) ? $button->buttontext : ''; ?>"
+                    <a class="<?php echo trim($buttonClasses); ?>"
+                       href="<?php echo htmlspecialchars($button->url, ENT_QUOTES, 'UTF-8'); ?>"
+                       target="<?php echo htmlspecialchars($target, ENT_QUOTES, 'UTF-8'); ?>"
+                       <?php if (!empty($rel)) : ?>rel="<?php echo htmlspecialchars($rel, ENT_QUOTES, 'UTF-8'); ?>"<?php endif; ?>
+                       aria-label="<?php echo htmlspecialchars($ariaLabel, ENT_QUOTES, 'UTF-8'); ?>"
                     >
-                        <?php if (isset($button->iconclass)) : ?>
-                            <i class="<?php echo $button->iconclass; ?>
-                                <?php echo (isset($button->buttontext) && $button->buttontext != "") ? 'pe-2' : ''; ?>">
-                            </i>
-                        <?php endif; // if $button->iconclass ?>
-                        <?php echo (isset($button->buttontext)) ? $button->buttontext : ''; ?>
+                        <?php if (!empty($button->iconclass)) : ?>
+                            <i class="<?php echo htmlspecialchars($button->iconclass, ENT_QUOTES, 'UTF-8');
+                                echo !empty($button->buttontext) ? ' pe-2' : ''; ?>"></i>
+                        <?php endif; ?>
+                        <?php echo htmlspecialchars($button->buttontext ?? '', ENT_QUOTES, 'UTF-8'); ?>
                     </a>
-                    <?php
-
-                    // If $button->buttontext
-                endif;
-
-                // Foreach $buttons as $button
-            endforeach;
-            ?>
+                <?php endif; ?>
+            <?php endforeach; ?>
         </div>
-    <?php endif; // if is_object(buttons) ?>
+    <?php endif; ?>
     <?php if ($after) : ?>
         <div class="after">
             <?php echo $after; ?>
         </div>
-    <?php endif; // if before?>
+    <?php endif; ?>
 </div>

@@ -14,7 +14,7 @@ $wrapperClass = $block == 1 ? 'd-grid gap-2' : '';
 ?>
 
 <div class="d-flex flex-column pretty-buttons">
-    <?php if ($before) : ?>
+    <?php if (!empty($before)) : ?>
         <div class="before">
             <?php echo $before; ?>
         </div>
@@ -28,8 +28,11 @@ $wrapperClass = $block == 1 ? 'd-grid gap-2' : '';
                     $rel           = $target === '_blank' ? 'noopener noreferrer' : '';
 
                     if (!empty($button->buttonclass)) {
-                        $classes      = is_array($button->buttonclass) ? $button->buttonclass : [$button->buttonclass];
-                        $buttonClasses = implode(' ', array_map('htmlspecialchars', $classes));
+                        $classes       = is_array($button->buttonclass) ? $button->buttonclass : [$button->buttonclass];
+                        $buttonClasses = implode(' ', array_map(
+                            static fn(string $c) => htmlspecialchars($c, ENT_QUOTES, 'UTF-8'),
+                            $classes
+                        ));
                     }
 
                     if (!empty($button->custombuttonclass)) {
@@ -50,7 +53,7 @@ $wrapperClass = $block == 1 ? 'd-grid gap-2' : '';
                     >
                         <?php if (!empty($button->iconclass)) : ?>
                             <i class="<?php echo htmlspecialchars($button->iconclass, ENT_QUOTES, 'UTF-8');
-                                echo !empty($button->buttontext) ? ' pe-2' : ''; ?>"></i>
+                                echo !empty($button->buttontext) ? ' pe-2' : ''; ?>" aria-hidden="true"></i>
                         <?php endif; ?>
                         <?php echo htmlspecialchars($button->buttontext ?? '', ENT_QUOTES, 'UTF-8'); ?>
                     </a>
@@ -58,7 +61,7 @@ $wrapperClass = $block == 1 ? 'd-grid gap-2' : '';
             <?php endforeach; ?>
         </div>
     <?php endif; ?>
-    <?php if ($after) : ?>
+    <?php if (!empty($after)) : ?>
         <div class="after">
             <?php echo $after; ?>
         </div>

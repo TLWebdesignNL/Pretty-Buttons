@@ -3,6 +3,31 @@
     <changelog>
         <element>mod_prettybuttons</element>
         <type>module</type>
+        <version>1.3.0</version>
+        <security>
+            <item>Fixed htmlspecialchars encoding flags on button class attributes</item>
+        </security>
+        <change>
+            <item>Migrated custom form field to PSR-4 namespace, replacing legacy J-prefix class</item>
+            <item>Installer script modernised to use InstallerScriptInterface (Joomla 5+ pattern)</item>
+            <item>Minimum required Joomla version raised to 5.4.0</item>
+            <item>Expanded export-ignore rules to exclude dev files from release archives</item>
+        </change>
+        <fix>
+            <item>Legacy fields/ directory now removed on update for pre-Joomla 6.1 installations</item>
+            <item>Before/after content blocks now use strict empty check to avoid false negatives</item>
+        </fix>
+        <addition>
+            <item>Decorative icons now include aria-hidden="true" for improved screen reader support</item>
+        </addition>
+        <language>
+            <item>Improved hint and description text for button text and URL subform fields</item>
+            <item>Removed unused empty installer key strings from sys.ini files</item>
+        </language>
+    </changelog>
+    <changelog>
+        <element>mod_prettybuttons</element>
+        <type>module</type>
         <version>1.2.0</version>
         <security>
             <item>Improved output escaping for safer button rendering</item>

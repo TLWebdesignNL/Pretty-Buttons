@@ -128,4 +128,26 @@
         <targetplatform name="joomla" version="4|5|6"/>
         <client>site</client>
     </update>
+<update>
+        <name>Pretty Buttons 1.3.0</name>
+        <description>Joomla 6 compatibility: service provider architecture, XSS fixes, installer script improvements</description>
+        <element>mod_prettybuttons</element>
+        <type>module</type>
+        <version>1.3.0</version>
+        <downloads>
+            <downloadurl type="full" format="zip">
+                https://github.com/TLWebdesign/Pretty-Buttons/archive/refs/tags/V1.3.0.zip
+            </downloadurl>
+        </downloads>
+        <tags>
+            <tag>stable</tag>
+        </tags>
+        <sha256>7577fd091c38f635d8005126f5f10942a942146b3c71b259421ac92e1c2461b5</sha256>
+        <changelogurl>https://raw.githubusercontent.com/TLWebdesign/Pretty-Buttons/main/changelog.xml</changelogurl>
+        <maintainer>TLWebdesign</maintainer>
+        <maintainerurl>https://www.tlwebdesign.nl/</maintainerurl>
+        <section>Updates</section>
+        <targetplatform name="joomla" version="4|5|6"/>
+        <client>site</client>
+    </update>
 </updates>

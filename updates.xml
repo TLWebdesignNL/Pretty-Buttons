@@ -128,7 +128,7 @@
         <targetplatform name="joomla" version="4|5|6"/>
         <client>site</client>
     </update>
-<update>
+    <update>
         <name>Pretty Buttons 1.3.0</name>
         <description>Joomla 6 compatibility: service provider architecture, XSS fixes, installer script improvements</description>
         <element>mod_prettybuttons</element>

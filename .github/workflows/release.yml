@@ -106,8 +106,10 @@ jobs:
           # Update sha256
           new_block = re.sub(r'<sha256>[a-f0-9]+</sha256>', f'<sha256>{sha256}</sha256>', new_block)
 
-          # Detect indentation of the last block and match it
-          indent = re.match(r'(\s*)', last).group(1)
+          # Indent the new block like the template's closing tag; the template is
+          # matched from <update>, so its own first line carries no indentation
+          closing   = re.search(r'\n([ \t]*)</update>$', last)
+          indent    = closing.group(1) if closing else '    '
           new_block = indent + new_block.lstrip()
 
           content = content.replace('</updates>', new_block + '\n</updates>')
